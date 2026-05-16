@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuizHub - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: bold;
+            color: #4a00e0;
+        }
+
+        .join-box input {
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .categories {
+            display: flex;
+            gap: 15px;
+            padding: 15px 30px;
+            overflow-x: auto;
+        }
+
+        .categories span {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .categories span:hover, .active {
+            background: #4a00e0;
+            color: white;
+        }
+
+        .quiz-card {
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-custom {
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h1 class="logo">QuizHub</h1>
+
+    <div class="join-box">
+        <span>Join Game? Enter PIN:</span>
+        <input type="text" placeholder="123 456">
+        <a href="quiz.html"><button class="btn btn-success">Join</button></a>
+    </div>
+
+    <button class="btn btn-outline-dark">Sign In</button>
+</div>
+
+<!-- Categories -->
+<div class="categories">
+    <span>Art</span>
+    <span>Entertainment</span>
+    <span>Geography</span>
+    <span>History</span>
+    <span class="active">Languages</span>
+    <span>Science</span>
+    <span>Sports</span>
+    <span>Trivia</span>
+</div>
+
+<!-- Main Cards -->
+<div class="container mt-5">
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card quiz-card">
+                <h3>🎮 Participate in Quiz</h3>
+                <p>Join and play live quizzes instantly</p>
+                <a href="quiz.html"><button class="btn btn-success btn-custom">Play Now</button></a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card quiz-card">
+                <h3>🛠 Create a Quiz</h3>
+                <p>Design your own quiz easily</p>
+                <a href="create.html"><button class="btn btn-primary btn-custom">Create</button></a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card quiz-card">
+                <h3>🤖 AI Quiz Generator</h3>
+                <p>Generate quiz from any topic</p>
+                <a href="generate.html"><button class="btn btn-info btn-custom">Generate</button></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

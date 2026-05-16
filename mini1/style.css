@@ -1,0 +1,44 @@
+body {
+    background-color: #fffdf5;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.join-box input {
+    padding: 5px;
+    width: 100px;
+}
+
+.categories {
+    display: flex;
+    gap: 20px;
+    padding: 10px 30px;
+    font-weight: bold;
+}
+
+.categories span {
+    cursor: pointer;
+}
+
+.categories .active {
+    border-bottom: 3px solid black;
+}
+
+.quiz-card {
+    background-color: #0f3d3e;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}

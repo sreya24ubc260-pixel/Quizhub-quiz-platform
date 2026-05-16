@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Quiz Generator</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+        min-height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .container-box {
+        max-width: 700px;
+        margin: auto;
+        margin-top: 80px;
+        background: rgba(255,255,255,0.1);
+        padding: 30px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        text-align: center;
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 12px;
+        padding: 12px;
+        border: none;
+    }
+
+    .btn-generate {
+        margin-top: 15px;
+        width: 100%;
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        border: none;
+        transition: 0.3s;
+    }
+
+    .btn-generate:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    }
+
+    .card {
+        border-radius: 15px;
+        background: white;
+        color: black;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .loading {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container-box">
+    <h2>🤖 AI Quiz Generator</h2>
+
+    <input id="topic" class="form-control mt-3" placeholder="Enter topic (e.g. HTML, Science)">
+    
+    <button onclick="loadQuiz()" class="btn btn-generate">Generate Quiz</button>
+
+    <div id="loading" class="loading"></div>
+
+    <div id="result" class="mt-4"></div>
+</div>
+
+<script>
+function loadQuiz() {
+    const topic = document.getElementById("topic").value;
+    const resultDiv = document.getElementById("result");
+    const loadingDiv = document.getElementById("loading");
+
+    resultDiv.innerHTML = "";
+    loadingDiv.innerHTML = "⏳ Generating quiz...";
+
+    fetch("fetch.php")
+    .then(res => res.json())
+    .then(data => {
+        loadingDiv.innerHTML = "";
+
+        let output = "";
+
+        data.forEach(q => {
+            output += `
+                <div class="card p-3 mt-3 text-start">
+                    <h5>${q.question}</h5>
+                    <p>1. ${q.option1}</p>
+                    <p>2. ${q.option2}</p>
+                    <p>3. ${q.option3}</p>
+                </div>
+            `;
+        });
+
+        resultDiv.innerHTML = output;
+    })
+    .catch(() => {
+        loadingDiv.innerHTML = "❌ Error loading quiz";
+    });
+}
+</script>
+
+</body>
+</html>
