@@ -32,7 +32,7 @@ It is designed with a clean UI, responsive layout, and engaging quiz experience 
 
 ## 🏠 Home Page
 
-HomePage.jpeg
+Quizhub-quiz-platform/HomePage.jpeg
 
 ## 🤖 AI Quiz Generator
 
