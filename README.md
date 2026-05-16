@@ -32,23 +32,23 @@ It is designed with a clean UI, responsive layout, and engaging quiz experience 
 
 ## 🏠 Home Page
 
-Quizhub-quiz-platform/HomePage.jpeg
+![Home Page](HomePage.jpeg)
 
 ## 🤖 AI Quiz Generator
 
-AIQuizGenerator.jpeg
+![AI Quiz Generator](AIQuizGenerator.jpeg)
 
 ## ✍️ Create Quiz Page
 
-CreateQuizPage.jpeg
+![Create Quiz Page](CreateQuizPage.jpeg)
 
 ## ❓ Quiz Question Page
 
-QuizQuestionPage.jpeg
+![Quiz Question Page](QuizQuestionPage.jpeg)
 
 ## 🎉 Result Page
 
-ResultPage.jpeg
+![Result Page](ResultPage.jpeg)
 
 # 📂 Project Structure
 
